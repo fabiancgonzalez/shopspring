@@ -1,0 +1,5 @@
+target/
+secrets.properties
+.env
+.env.local
+node_modules/

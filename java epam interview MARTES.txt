@@ -1,0 +1,988 @@
+🧠 Core Java & OOPs (Very Deep Questions)
+1️⃣ What are SOLID principles? Can you explain them with examples?
+ 2️⃣ Difference between abstraction and encapsulation — real-time examples.
+ 3️⃣ Explain immutability — how to make a class immutable in Java.
+ 4️⃣ How does HashMap work internally? What happens during resizing?
+ 5️⃣ What’s the difference between ConcurrentHashMap and Collections.synchronizedMap()?
+ 6️⃣ Explain thread lifecycle and difference between Thread.start() and run().
+ 7️⃣ What is the difference between ExecutorService and ForkJoinPool?
+ 8️⃣ How do you implement custom sorting using Comparator and Comparable?
+ 9️⃣ What is Java Memory Model (JMM) and volatile keyword?
+ 🔟 How do you handle memory leaks in Java?
+🌿 Spring Framework / Spring Boot
+1️⃣1️⃣ What is the lifecycle of a Spring Bean?
+ 1️⃣2️⃣ Difference between @Autowired and @Inject.
+ 1️⃣3️⃣ How does @Transactional work internally? (Propagation + Isolation)
+ 1️⃣4️⃣ What are Spring Boot Starters?
+ 1️⃣5️⃣ How to create custom annotations in Spring Boot?
+ 1️⃣6️⃣ What is the difference between ApplicationContext and BeanFactory?
+ 1️⃣7️⃣ Explain how Spring handles dependency injection using reflection.
+ 1️⃣8️⃣ What is the use of CommandLineRunner and ApplicationRunner?
+ 1️⃣9️⃣ How do you externalize configuration in Spring Boot?
+ 2️⃣0️⃣ What is Spring Boot Actuator and what endpoints are most used?
+🧩 Microservices Architecture
+2️⃣1️⃣ What is service discovery? How does Eureka/Consul handle it?
+ 2️⃣2️⃣ How do microservices communicate with each other? (REST, Kafka, gRPC)
+ 2️⃣3️⃣ What are common challenges in microservices and how do you solve them?
+ 2️⃣4️⃣ How do you secure microservices (OAuth2/JWT)?
+ 2️⃣5️⃣ What is distributed tracing? How do you implement it (Zipkin, Sleuth, OpenTelemetry)?
+ 2️⃣6️⃣ Explain Circuit Breaker, Retry, and Rate Limiting patterns.
+ 2️⃣7️⃣ How do you handle inter-service transactions? (Saga, 2PC)
+ 2️⃣8️⃣ What is API Gateway and its role in microservices?
+ 2️⃣9️⃣ Explain the role of Config Server in Spring Cloud.
+⚙️ Coding / Problem Solving (EPAM Always Asks)
+4️⃣1️⃣ Write a program to find the second highest number in an array.
+ 4️⃣2️⃣ Reverse a linked list iteratively and recursively.
+ 4️⃣3️⃣ Given a string, find the first non-repeated character.
+ 4️⃣4️⃣ Implement an LRU Cache in Java.
+ 4️⃣5️⃣ Find all pairs of integers whose sum equals a given target.
+ 4️⃣6️⃣ Implement producer-consumer using wait() and notify().
+ 4️⃣7️⃣ Write a REST API to return top 5 highest salaries by department.
+ 4️⃣8️⃣ Implement an Employee class and sort employees by salary, then name.
+ 4️⃣9️⃣ Given a list of transactions, calculate total by user ID using streams.
+ 5️⃣0️⃣ Implement rate limiting for API calls in Java.
+ 
+ 
+ VERY IMPORTANT QUESTIONS: secret management and API gateway and the deployment process
+ 
+ OTRAS PAGINAS DE CODIGO PARA JA AINTERVIEW:  https://www.ambitionbox.com/interviews/epam-systems-interview-questions/java-developer
+ https://www.lets-code.co.in/previousyearcodingquestion/epam-previous-year-coding-questions/#google_vignette
+ https://javainterviewquestionspro.com/epam-java-developer-interview-questions-2026/#core-java-questions
+ https://www.lets-code.co.in/interview/springbootinterview/
+ EJERCICIOS PARA CODIFICAR EN VIVO:
+ https://www.lets-code.co.in/previousyearcodingquestion/epam-previous-year-coding-questions/
+ 
+ 
+ 
+GUIA DE ENTREVISTA EPAM EN ESTA PAGINA :https://completeinterview.com/articles/your-guide-to-cracking-the-epam-online-assessment-and-technical-interview
+Your Guide to Cracking the EPAM Online Assessment and Technical Interview
+EPAM's on-campus process has 5 rounds, but 80% of rejections happen in just two of them: the Online Coding Assessment and the Java-heavy Technical Interview. This guide covers all 5 rounds briefly, but goes deep on exactly these two. You'll get a curated list of 35+ coding problems asked in real EPAM drives, the Java rapid-fire questions interviewers love, and mistakes that got real candidates rejected.
+
+
+Senior Software Engineer at Atlassian
+
+One thing before you start: EPAM generally allows candidates to code in Java, C++, or Python, although the exact options can vary across hiring drives. Since many technical interviews include Java and OOP discussions, preparing in Java is still a good choice if you're comfortable with it. If your strongest language is C++ or Python, you can typically use that for coding rounds, just verify the allowed languages for your specific drive.
+
+EPAM Recruitment Process at a Glance
+EPAM's on-campus hiring process typically consists of 6 elimination rounds. While the exact pattern may vary slightly across campuses, the overall flow remains largely the same (a recent drive shortlisted 99 out of 2500 after the OA).
+
+Round
+
+Format
+
+Mode
+
+What's Tested
+
+1. Online Assessment
+
+MCQs + 2 Coding Questions
+
+Online, Proctored
+
+Aptitude, Reasoning, Programming Concepts, DSA
+
+2. Pre-Placement Talk (PPT)
+
+Company Presentation
+
+Online/Offline
+
+Company Overview, Role Expectations, Q&A
+
+3. In-Person Coding Test
+
+2 Coding Questions
+
+Offline (Campus Lab)
+
+DSA & Problem Solving
+
+4. Group Discussion
+
+~10 students
+
+Offline
+
+Communication & Structured Thinking
+
+5. Technical Interview
+
+60–90 mins
+
+1:1
+
+Java/OOP, DSA, Projects
+
+6. Managerial & Final Interview
+
+20–45 mins
+
+1:1
+
+Behavioral, Ownership, Culture Fit
+
+Interview patterns can vary slightly across campuses and hiring drives. The structure below reflects the latest process shared by participating colleges. Earlier drives have included different combinations of aptitude, language MCQs, and coding rounds, so always read the official instructions carefully.
+
+Round 1: Online Coding Assessment
+What to Expect
+The Online Assessment is the first elimination round and usually consists of two parts:
+
+Multiple Choice Questions
+
+Aptitude
+
+Logical Reasoning
+
+Programming Fundamentals
+
+Output-based Java/C++/Python questions
+
+Basic Computer Science concepts
+
+2 Coding Questions 
+
+The coding section generally consists of two DSA problems ranging from Easy to Medium difficulty.
+
+Partial test cases count. A recent candidate cleared the OA with 8/12 and 11/12 test cases passed. Don't abandon a question just because edge cases fail. Submit what works.
+
+The 40 Question Prep List for 2 Coding Questions in Online Assessment
+Every ⭐ problem below was asked in a real EPAM round (OA, offline, or technical). The rest are the highest-probability picks for the same patterns.
+
+
+Arrays & Strings (8)
+#
+
+Problem
+
+Level
+
+Note
+
+1
+
+Longest Palindromic Substring ⭐
+
+MEDIUM
+
+Asked in a 2026 campus OA
+
+2
+
+Sort multiples of 3 & 5 in-place (rest untouched) ⭐
+
+MEDIUM
+
+Asked in the same OA
+
+3
+
+Rotate Image (Matrix 90° Clockwise) ⭐
+
+MEDIUM
+
+Asked in technical round
+
+4
+
+Trapping Rain Water ⭐
+
+HARD
+
+Asked in offline coding round
+
+5
+
+Maximum Subarray (Kadane's)
+
+MEDIUM
+
+Classic array must-know
+
+6
+
+Product of Array Except Self
+
+MEDIUM
+
+Tests prefix/suffix thinking
+
+7
+
+First Repeating Character ⭐
+
+EASY
+
+Asked with a Java 8 Streams constraint. Practice both ways
+
+8
+
+Valid Anagram
+
+EASY
+
+Warm-up for Group Anagrams
+
+
+Hashing (4)
+#
+
+Problem
+
+Level
+
+Note
+
+9
+
+Group Anagrams ⭐
+
+MEDIUM
+
+Asked in EPAM Round 1
+
+10
+
+Two Sum
+
+EASY
+
+The universal opener
+
+11
+
+Top K Frequent Elements ⭐
+
+MEDIUM
+
+Asked as "K most frequently failed IPs" in technical round
+
+12
+
+Longest Consecutive Sequence
+
+MEDIUM
+
+HashSet pattern
+
+
+Two Pointers & Sliding Window (5)
+#
+
+Problem
+
+Level
+
+Note
+
+13
+
+Longest Substring Without Repeating Characters
+
+MEDIUM
+
+Most-asked sliding window problem in service companies
+
+14
+
+Container With Most Water
+
+MEDIUM
+
+Two-pointer staple
+
+15
+
+3Sum
+
+MEDIUM
+
+Sorting + two pointers
+
+16
+
+Move Zeroes
+
+EASY
+
+In-place manipulation (same family as ⭐ #2)
+
+17
+
+Max Consecutive Ones III
+
+MEDIUM
+
+Window with budget
+
+
+Binary Search (3)
+#
+
+Problem
+
+Level
+
+Note
+
+18
+
+Search in Rotated Sorted Array ⭐
+
+MEDIUM
+
+Asked in EPAM OA
+
+19
+
+Find First and Last Position of Element
+
+MEDIUM
+
+Boundary binary search
+
+20
+
+Find Peak Element
+
+MEDIUM
+
+Binary search on answer intuition
+
+
+Stack, Queue & Linked List (6)
+#
+
+Problem
+
+Level
+
+Note
+
+21
+
+Valid Parentheses
+
+EASY
+
+Stack fundamentals
+
+22
+
+Next Greater Element
+
+MEDIUM
+
+Monotonic stack (LC variant: Next Greater Element I)
+
+23
+
+LRU Cache
+
+HARD
+
+Asked as a concept question too
+
+24
+
+Sliding Window Maximum
+
+HARD
+
+Based on Deque
+
+25
+
+Reverse Linked List
+
+EASY
+
+Non-negotiable
+
+26
+
+Linked List Cycle
+
+EASY
+
+Floyd's algorithm
+
+27
+
+Merge Two Sorted Lists
+
+EASY
+
+Feeds into merge sort discussion
+
+
+Trees (5)
+Note: These show up more in the technical interview than the OA, but EPAM loves tree views
+
+#
+
+Problem
+
+Level
+
+Note
+
+28
+
+Top View of Binary Tree ⭐
+
+MEDIUM
+
+Asked in 2 separate EPAM technical rounds
+
+29
+
+Diagonal Traversal of Binary Tree ⭐
+
+MEDIUM
+
+Asked in technical round
+
+30
+
+Binary Tree Level Order Traversal
+
+MEDIUM
+
+Foundation for both above
+
+31
+
+Diameter of Binary Tree
+
+MEDIUM
+
+Common follow-up
+
+32
+
+Lowest Common Ancestor of a Binary Tree
+
+MEDIUM
+
+Standard tree question
+
+
+Graphs & DP (8)
+#
+
+Problem
+
+Level
+
+Note
+
+33
+
+Number of Islands ⭐
+
+MEDIUM
+
+Asked (modified version) in 2025 OA
+
+34
+
+Word Ladder ⭐
+
+HARD
+
+Asked in 2025 OA. BFS shortest transformation
+
+35
+
+Rotting Oranges
+
+MEDIUM
+
+Multi-source BFS, same family
+
+36
+
+Partition Equal Subset Sum ⭐
+
+MEDIUM
+
+Asked in EPAM OA. Subset-sum DP
+
+37
+
+Climbing Stairs
+
+EASY
+
+DP entry point
+
+38
+
+House Robber
+
+MEDIUM
+
+1-D DP staple
+
+39
+
+Coin Change
+
+MEDIUM
+
+Unbounded knapsack
+
+40
+
+Longest Common Subsequence
+
+MEDIUM
+
+The offline round has had an unnamed Hard DP question. LCS family is the safest bet
+
+How to use this list in 2-3 weeks: Do the 13 ⭐ questions first, since they're literally repeated. Then finish one accordion per day. Solve everything in your preferred language, timed at 15 min per problem.
+
+OA Strategy
+🎯 Since the assessment combines MCQs and coding questions, manage your time carefully. Finish the MCQs quickly without overthinking and reserve most of your time for the coding problems, since they usually carry higher weightage.
+
+Read the coding constraints carefully.
+
+Submit partial solutions if you're stuck.
+
+Test edge cases.
+
+Don't spend too much time on difficult MCQs.
+
+
+Pre-Placement Talk (PPT)
+Many students skip or ignore the PPT, but it is worth attending.
+
+During this session, EPAM usually introduces:
+
+• Company culture
+
+• Job role
+
+• Compensation
+
+• Learning programs
+
+• Growth opportunities
+
+• Hiring timeline
+
+Interviewers sometimes ask:
+
+"Did you attend the PPT?"
+
+or
+
+"What did you learn about EPAM?"
+
+Spending 30–45 minutes attending the session can help you answer these questions confidently later.
+
+Round 2: Offline Coding Assessment
+The in-person coding test is conducted in the campus lab/seminar-hall under supervision. Unlike the online assessment, this round focuses entirely on coding and does not include MCQs.
+
+Two DSA Coding Problems
+
+Medium to Hard Difficulty
+
+Focus on clean code, correctness, and optimization
+
+Java, C++, or Python (depending on the assessment platform)
+
+Coding (2 Qs, Hard)
+
+Trapping Rain Water ⭐ ASKED 2024
+
+A Hard DP problem based on LCS, Coin Change, 0/1 Knapsack ⭐ ASKED 2025
+
+
+DP Practice Problems
+Title
+
+Difficulty
+
+Longest Palindromic Substring
+
+MEDIUM
+
+Best Time to Buy and Sell Stock
+
+EASY
+
+House Robber
+
+MEDIUM
+
+Partition Equal Subset Sum
+
+MEDIUM
+
+Maximum Subarray
+
+MEDIUM
+
+Unique Paths
+
+MEDIUM
+
+Edit Distance
+
+MEDIUM
+
+Backtracking problems like Generate Parentheses ASKED 2025
+
+LRU Cache or Deque-based problems (focuses on O(1) insertion and deletion).
+
+Solve Sliding Window Maximum too for mastering this pattern. ASKED 2025
+
+
+
+This round is where your ⭐ list overlaps: if you've done Trapping Rain Water and the DP block from Section 2, you're already 50% prepared.
+
+Round 3: Group Discussion
+~10 students, 1 moderator, ~30 min. Everyone typically gets one chance to speak, so make it count.
+
+They're testing English fluency and structured thinking, not domain knowledge.
+
+Don't relax: one drive forwarded the entire group; another eliminated a large chunk. It's unpredictable.
+
+Real EPAM GD topics:
+
+"What if Google Maps stopped existing?"
+
+"Does family tradition limit your future?"
+
+Use a simple 3-part structure when you speak: state your stance, give one concrete example, then a one-line conclusion. 45 seconds of clarity beats 3 minutes of rambling.
+
+Round 4: Technical Interview
+Format
+60 to 90 min. Structure seen repeatedly: ~30 min Java/OOP rapid-fire, then 1-2 live coding questions, then project discussion.
+
+Interviewers may be from a different domain (one candidate faced a Big Data panel for an SDE posting). Stay flexible.
+
+Live coding may run on your own IDE, and you may be denied rough paper. Practice dry-running in the IDE itself.
+
+Java (C++ or Python) Rapid-Fire Questions
+Note: Prepare similar questions if you opt for different language.
+
+
+Core Java
+Purpose of final, finally, and finalize?
+
+Is Java pass-by-value or pass-by-reference? Prove it with code.
+
+What happens when a method/variable is marked static?
+
+What is the Java String Pool?
+
+What does @Override actually do, and what breaks if you remove it?
+
+Can we overload the main method?
+
+What are constructors? Types of constructors?
+
+
+Object-Oriented Programming (OOP)
+Explain all 4 OOP concepts with real-world examples. 
+
+Explain inheritance with a working code example. 
+
+Compile-time vs runtime polymorphism, with code for both. 
+
+Abstract class vs Interface: when to pick which? 
+
+Write a program implementing abstraction. 
+
+Shallow copy vs deep copy: implement deep copy in Java.
+
+
+Collections & DSA Theory
+HashMap vs Hashtable. 
+
+ArrayList vs Vector.
+
+How does HashMap work internally?
+
+How many data structures are you familiar with? (Be ready with a confident structured answer.)
+
+Quicksort algorithm + best/worst case complexity.
+
+Quicksort vs Merge sort.
+
+Write the binary search algorithm.
+
+How can a stack be implemented using an array?
+
+Count character frequency in a string without HashMap or array. (asked; think Streams/Collectors.groupingBy, and answer in Java)
+
+
+Multithreading & Misc
+What is a synchronized block and how does it work?
+
+Explain the Producer-Consumer problem. 
+
+Basics of Java 8 Streams and lambda expressions (they've asked coding questions constrained to Streams).
+
+What is the requirement traceability matrix? (odd one, but reported)
+
+Live Coding in the Technical Round
+Problem
+
+Source
+
+Top View of Binary Tree
+
+Asked twice across experiences
+
+Diagonal Traversal of Binary Tree
+
+2025 technical round
+
+Rotate Image (Matrix 90°)
+
+2025 technical round
+
+LRU Cache (design-based)
+
+2025 technical round
+
+K Most Frequently Failed IPs (pattern: Top K Frequent Words)
+
+On-campus technical round
+
+First Repeating Character via Streams + Lambda
+
+LeetCode experience
+
+Group Anagrams
+
+LeetCode experience
+
+The pattern that worked for a selected candidate: explain the approach first, code while narrating, state time and space complexity unprompted, then ask if optimization is needed. Do this every time.
+
+Project Discussion
+Expect: architecture of your project, why you chose X tech, problems you faced, how you handled obstacles.
+
+Deployed, live projects (GitHub + hosted link) have repeatedly impressed EPAM interviewers.
+
+If you have a Spring Boot + MongoDB project, be ready to defend your DB choice (one candidate defended MongoDB with a "flexible metadata" argument, and it worked).
+
+Try to answer in STAR (Situation, Task, Action, Result) Format.
+
+💡 If your project is just on localhost, deploy it this week. A live URL is the single cheapest credibility boost.
+
+Round 5: Managerial & Final Interview
+The final round is typically conducted by a manager or senior leadership representative. The discussion focuses less on coding and more on your communication skills, ownership, teamwork, career aspirations, and overall fit for the organization.
+
+
+Explain one of your projects.
+During my final year, I built an Online Food Ordering System using Spring Boot, React, and MySQL. The application allows users to browse restaurants, place orders, and track order status. I implemented user authentication using JWT, built REST APIs for order management, and integrated Razorpay for payments. One challenge was handling concurrent order updates. I solved it using optimistic locking to prevent conflicting updates. Through this project, I learned REST API design, database optimization, and how to structure a scalable backend.
+
+
+What does EPAM mean? How did EPAM catch your attention?
+EPAM stands for Effective People Advancing Management. I first came across EPAM through its strong reputation in software engineering and digital transformation. I also learned that EPAM invests heavily in employee learning through structured training programs, which really attracted me because I'm someone who enjoys continuously learning new technologies.
+
+
+Tell me about yourself.
+Hi, I'm Rahul Sharma, currently pursuing my B.Tech in Computer Science from XYZ University. I enjoy solving data structures and algorithms problems and have solved over 500 problems on LeetCode. Apart from DSA, I've built full-stack projects using Java, Spring Boot, React, and MySQL. Recently, I've been learning system design and cloud technologies. Outside academics, I enjoy playing badminton and mentoring juniors in programming.
+
+If they ask about family:
+
+I come from a supportive family of four members. My father runs a small business, my mother is a homemaker, and my younger sister is currently pursuing her graduation. My family has always encouraged me to focus on education and continuous learning.
+
+
+Where do you see yourself in 5 years?
+In the next five years, I want to become a strong software engineer who can independently design and build scalable systems. I also hope to mentor junior engineers and contribute to technically challenging projects. My primary goal is continuous learning rather than simply reaching a particular designation.
+
+
+Tell me about a time you played a leadership role.
+During my final-year project, our team initially struggled because tasks weren't clearly divided. I suggested creating a weekly plan and assigned responsibilities based on everyone's strengths. We also held short progress meetings every weekend. As a result, we completed the project two weeks before the deadline and successfully demonstrated all the planned features.
+
+
+Tell me about a time you worked in a team.
+During a hackathon, our team consisted of four members. I was responsible for the backend APIs while others handled the frontend and UI. We used GitHub for collaboration and held regular discussions to resolve integration issues. Even when requirements changed midway, we communicated effectively and completed the project on time.
+
+
+How do you keep yourself updated with technology?
+I regularly follow engineering blogs from companies like Google, Netflix, Uber, and Microsoft. I also watch conference talks on YouTube, solve coding problems regularly, and build side projects whenever I learn a new technology. This combination helps me understand both theory and practical implementation.
+
+
+
+Note: Make sure you really have watched some and able to explain.
+
+
+What are your strengths and weaknesses?
+Strengths
+One of my biggest strengths is that I enjoy solving problems and don't give up easily. If I don't understand something initially, I spend time researching and experimenting until I find the solution. I'm also comfortable learning new technologies quickly whenever required.
+
+Weakness
+Earlier, I used to spend too much time trying to make every solution perfect. Over time, I realized that delivering a good solution first and improving it iteratively is often more effective. I've been consciously working on balancing perfection with productivity.
+
+
+How do you handle pressure or crises?
+I try not to panic. First, I identify the highest-priority issue and break the problem into smaller tasks. Then I communicate with my team if required and work on resolving the critical issues first. I believe staying calm and communicating clearly is the best way to handle pressure.
+
+
+What if your coworker is always late?
+I would first speak to the colleague privately instead of raising the issue publicly. There could be a genuine reason. If the behavior continues despite the discussion and starts affecting the team's productivity, I would inform the team lead so that it can be handled professionally.
+
+
+Why Java?
+Java is the language I've spent the most time working with. It has helped me build a strong understanding of object-oriented programming, collections, multithreading, and backend development using Spring Boot. That's why I feel most productive using Java. However, I'm comfortable learning and working with other programming languages whenever a project requires it.
+
+
+Do you have any questions for me?
+Never answer "No."
+
+
+
+Some good questions are:
+
+
+
+Could you tell me more about the onboarding and training process for fresh graduates?
+
+
+
+How are new engineers mentored during their first few months?
+
+
+
+What kind of projects do fresh graduates usually work on?
+
+
+
+How do teams collaborate across different locations?
+
+
+
+What qualities do your highest-performing software engineers usually have?
+
+
+
+What does success look like for someone in this role during the first six months?
+
+
+Tip
+Question
+
+What the interviewer is evaluating
+
+Key points to cover
+
+Tell me about yourself
+
+Communication & confidence
+
+Education, projects, skills, interests
+
+Explain one project
+
+Technical depth
+
+Architecture, tech stack, challenges, learnings
+
+Leadership example
+
+Ownership
+
+Situation, action, outcome
+
+Teamwork example
+
+Collaboration
+
+Communication, conflict resolution, contribution
+
+Strengths & weaknesses
+
+Self-awareness
+
+Be honest and show improvement
+
+Why EPAM?
+
+Motivation
+
+Company culture, learning, career growth
+
+Questions for us
+
+Curiosity
+
+Training, mentorship, projects, team culture
+
+What Happens After Selection (Good-to-Know)
+From EPAM's own pre-placement talk: FTE interns go through a 3-6 month self-learning course, then an internal test, then a ~1-month probation before PPO conversion. Compensation reported: ~₹27.5K/month stipend, converting to ~₹8 LPA. No fixed login hours; they expect senior-level thinking even at junior roles. The full process can stretch 2-3 months, so be patient between rounds.
+
+Final Checklist
+All 13 ⭐ questions solved in Java, timed
+
+Full 40 questions list done at least once
+
+Java rapid-fire: can answer all 26 without pausing
+
+Java 8 Streams + lambda syntax practiced (they test it directly)
+
+One project deployed with a live URL, architecture explainable in 2 min
+
+3-4 STAR stories written down
+
+GD: practiced speaking 45 seconds on a random abstract topic
+
+All the best :)
+
+
+All articles
+
+6
+
+Up to 95% off
+Unlock everything with Premium
+One subscription unlocks everything on the platform.
+
+System Design guided practice
+Difficulty & topic-wise coding problems
+All Premium courses, articles & guides
+Personal notes + 1-on-1 sessions
+Buy Premium
+On this page
+
+EPAM Recruitment Process at a Glance
+
+Round 1: Online Coding Assessment
+
+What to Expect
+
+The 40 Question Prep List for 2 Coding Questions in Online Assessment
+
+OA Strategy
+
+Round 2: Offline Coding Assessment
+
+Round 3: Group Discussion
+
+Round 4: Technical Interview
+
+Format
+
+Java (C++ or Python) Rapid-Fire Questions
+
+Live Coding in the Technical Round
+
+Project Discussion
+
+Round 5: Managerial & Final Interview
+
+Strengths
+
+Weakness
+
+What Happens After Selection (Good-to-Know)
+
+Final Checklist
+
