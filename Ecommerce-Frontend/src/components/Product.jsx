@@ -68,7 +68,7 @@ const Product = () => {
   }
   return (
     <>
-      <div className="containers" style={{ display: "flex" }}>
+      <div className="containers" style={{ display: "flex", backgroundColor: "dimgrey", padding: "2rem" }}>
         <img
           className="left-column-img"
           src={imageUrl}

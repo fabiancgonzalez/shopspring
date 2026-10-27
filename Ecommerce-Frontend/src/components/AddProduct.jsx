@@ -50,9 +50,9 @@ const AddProduct = () => {
   };
 
   return (
-      <div className="container">
-        <div className="center-container">
-          <form className="row g-3 pt-5" onSubmit={submitHandler}>
+      <div className="container" style={{ backgroundColor: "lightgrey" }}>
+        <div className="center-container" style={{ marginTop: "7rem", backgroundColor: "darkblue" }}>
+          <form className="row g-3 pt-5" style={{ backgroundColor: "dimgrey" }} onSubmit={submitHandler}>
             <div className="col-md-6">
               <label className="form-label">
                 <h6>Nombre</h6>

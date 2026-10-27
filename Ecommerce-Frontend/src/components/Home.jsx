@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AppContext from "../Context/Context";
 import axios from "../axios";
 import unplugged from "../assets/unplugged.png"
+import defaultImage from "../assets/cars.png"
 
 const Home = ({ selectedCategory }) => {
   const { data, isError, isLoading, addToCart } = useContext(AppContext);
@@ -32,6 +33,7 @@ const Home = ({ selectedCategory }) => {
           gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
           gap: "20px",
           padding: "20px",
+            backgroundColor:"dimgrey"
         }}
       >
         {filteredProducts.length === 0 ? (
@@ -49,7 +51,7 @@ const Home = ({ selectedCategory }) => {
           </h2>
         ) : (
           filteredProducts.map((product) => {
-            const { id, brand, name, price, productAvailable } = product;
+            const { id, brand, name, price, productAvailable, imageName } = product;
             const cardStyle = {
               width: "18rem",
               height: "12rem",
@@ -78,7 +80,15 @@ const Home = ({ selectedCategory }) => {
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <img
-                    src={axios.getUri({ url: `/product/${id}/image` })}
+                    src={
+                      imageName
+                        ? axios.getUri({ url: `/product/${id}/image` })
+                        : defaultImage
+                    }
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = defaultImage;
+                    }}
                     alt={name}
                     loading="lazy"
                     decoding="async"
